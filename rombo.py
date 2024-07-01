@@ -10,9 +10,9 @@ class Rombo(BaseModel):
 
 @app.post("/rombo")
 def calcular_area_y_perimetro(rombo: Rombo):
-    area = (rombo.diagMayor * rombo.diagMenor) / 2
-    lado = sqrt((rombo.diagMenor**2 + rombo.diagMayor**2)/2) 
-    perimetro = 4 * (lado)
+    area = round((rombo.diagMayor * rombo.diagMenor) / 2,2)
+    lado = round(sqrt((rombo.diagMenor**2 + rombo.diagMayor**2)/2),2) 
+    perimetro = round(4 * (lado),2)
 
     return {
         "area": area,
