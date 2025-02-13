@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Estudiantes</h1>
+<a href="/crear" class="btn btn-primary">Crear Estudiante</a>
+
+<!-- Formulario de búsqueda -->
+<form action="/buscar" method="get" class="my-3">
+    <div class="input-group">
+        <input type="text" name="codigo_estudiante" class="form-control" placeholder="Código del Estudiante" required>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cédula</th>
+            <th>Código Estudiante</th>
+            <th>Género</th>
+            <th>Semestre Académico</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudiante in estudiantes %}
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.cedula }}</td>
+            <td>{{ estudiante.codigo_estudiante }}</td>
+            <td>{{ estudiante.genero }}</td>
+            <td>{{ estudiante.semestre_academico }}</td>
+            <td>{{ estudiante.edad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

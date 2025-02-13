@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Estudiante Encontrado</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cédula</th>
+            <th>Código Estudiante</th>
+            <th>Género</th>
+            <th>Semestre Académico</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.cedula }}</td>
+            <td>{{ estudiante.codigo_estudiante }}</td>
+            <td>{{ estudiante.genero }}</td>
+            <td>{{ estudiante.semestre_academico }}</td>
+            <td>{{ estudiante.edad }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
