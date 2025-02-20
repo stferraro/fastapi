@@ -1,10 +1,12 @@
 # Ignorar el entorno virtual
 venv/
 .venv/
+**/.venv/
 
 # Ignorar archivos de configuración sensible
 .env
 *.env
+**/.env/
 
 # Ignorar archivos de Python compilados
 __pycache__/
