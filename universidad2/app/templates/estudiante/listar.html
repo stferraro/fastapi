@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Lista de Estudiantes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Lista de Estudiantes</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Género</th>
+                <th>Código</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in estudiantes %}
+            <tr>
+                <td>{{ estudiante.id }}</td>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.apellido }}</td>
+                <td>{{ estudiante.edad }}</td>
+                <td>{{ estudiante.correo }}</td>
+                <td>{{ estudiante.genero }}</td>
+                <td>{{ estudiante.codigo_estudiante }}</td>
+                <td>
+                    <a href="/estudiantes/editar/{{ estudiante.id }}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="/estudiantes/eliminar/{{ estudiante.id }}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

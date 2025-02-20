@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Editar Estudiante{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Editar Estudiante</h2>
+    <form action="/estudiantes/editar/{{ estudiante.id }}" method="post" class="card p-4 shadow">
+        <input type="hidden" name="id" value="{{ estudiante.id }}">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="{{ estudiante.nombre }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input type="text" name="apellido" class="form-control" value="{{ estudiante.apellido }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Edad</label>
+            <input type="number" name="edad" class="form-control" value="{{ estudiante.edad }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" name="correo" class="form-control" value="{{ estudiante.correo }}" required>
+        </div>
+        <!-- Añadir campo genero -->
+        <div class="mb-3">
+            <label class="form-label">Género</label>
+            <input type="text" name="genero" class="form-control" value="{{ estudiante.genero }}" required>
+        </div>
+        <!-- Añadir campo codigo_estudiante -->
+        <div class="mb-3">
+            <label class="form-label">Código Estudiante</label>
+            <input type="text" name="codigo_estudiante" class="form-control" value="{{ estudiante.codigo_estudiante }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Actualizar</button>
+    </form>
+</div>
+{% endblock %}
+

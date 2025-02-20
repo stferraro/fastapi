@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Eliminar Estudiante{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4 text-danger">Eliminar Estudiante</h2>
+    <div class="card p-4 shadow">
+        <p class="text-center">¿Estás seguro de que deseas eliminar a <strong>{{ estudiante.nombre }} {{ estudiante.apellido }}</strong>?</p>
+        <form action="/estudiantes/eliminar/{{ estudiante.id }}" method="post">
+            <div class="d-flex justify-content-center gap-3">
+                <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+                <a href="/estudiantes" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
