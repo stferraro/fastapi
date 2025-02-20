@@ -69,9 +69,10 @@ Sigue estos pasos para instalar y configurar el proyecto:
     DB_DRIVER=postgresql+psycopg2
     ```
 
-6. **Ejecutar la aplicación**:
+6. **Run the application**:
     ```bash
-    uvicorn main:app --reload
+    uvicorn app.main:app --reload
+    fastapi dev app/main.py
     ```
 
     La aplicación estará disponible en `http://localhost:8000`.
@@ -175,7 +176,8 @@ Follow these steps to install and set up the project:
 
 6. **Run the application**:
     ```bash
-    uvicorn main:app --reload
+    uvicorn app.main:app --reload
+    fastapi dev app/main.py
     ```
 
     The application will be available at `http://localhost:8000`.
